@@ -1,0 +1,19 @@
+/* Import AFTER dhikr-counter.css.
+   Adapts the .dialog styles to the native <dialog> element used by ConfirmDialog.tsx.
+   (.dialog-backdrop from the main stylesheet is no longer needed.) */
+
+.dialog {
+  margin: auto;                                 /* centre in the top layer */
+  max-width: min(22rem, calc(100vw - 2rem));    /* keep a 16px gutter on phones */
+  color: var(--color-text);
+}
+
+/* A native dialog is display:none until showModal(); don't let .dialog's
+   display:flex override that. */
+.dialog:not([open]) {
+  display: none;
+}
+
+.dialog::backdrop {
+  background: var(--color-overlay);
+}
