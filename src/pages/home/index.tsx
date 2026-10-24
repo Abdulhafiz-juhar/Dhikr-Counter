@@ -1,5 +1,6 @@
 import { EmptyStateArt } from "@/components/EmptyStateArt";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Empty,
   EmptyContent,
@@ -12,14 +13,20 @@ import {
 export function Home() {
   return (
     <div className="flex flex-col h-screen gap-4 p-4">
-      <header>
-        <h2 className="text-gold-strong font-semibold text-sm">
-          DAILY REMEMBERANCE
-        </h2>
-        <h1 className="text-primary font-bold text-3xl">Dhikr Counter</h1>
-        <h3 className="text-muted-foreground">Friday, 16 October</h3>
-      </header>
-      <Empty className="border-2 border-border border-dashed bg-card grow-0 w-auto self-center">
+      <div className="flex flex-wrap justify-between gap-4 items-end">
+        <header>
+          <h2 className="text-gold-strong font-semibold text-sm">
+            DAILY REMEMBERANCE
+          </h2>
+          <h1 className="text-primary font-bold text-3xl">Dhikr Counter</h1>
+          <h3 className="text-muted-foreground">Friday, 16 October</h3>
+        </header>
+        <Button size={"lg"} variant="default" className={"p-6 w-max"}>
+          Add dhikr
+        </Button>
+      </div>
+      {/* first page - no dhikr yet */}
+      {/* <Empty className="border-2 border-border border-dashed bg-card  w-auto self-center">
         <EmptyHeader>
           <EmptyStateArt />
 
@@ -33,10 +40,17 @@ export function Home() {
         </EmptyHeader>
         <EmptyContent className="flex-row justify-center gap-2">
           <Button size={"lg"} variant="default" className={"p-6"}>
-            Create Project
+             Add dhikr
           </Button>
         </EmptyContent>
-      </Empty>
+      </Empty> */}
+      {/* first page - no dhikr yet */}
+      <div>
+        <Card> hi </Card>
+        <Card> hi </Card>
+        <Card> hi </Card>
+        <Card> hi </Card>
+      </div>
     </div>
   );
 }
