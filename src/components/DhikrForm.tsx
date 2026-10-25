@@ -1,7 +1,7 @@
 import { useId, useState, type FormEvent } from "react";
 import type { DhikrFormErrors, DhikrFormValues } from "@/types/types";
 import { validateDhikr } from "@/types/validate";
-import { Button } from "./Button";
+import { Button } from "./ui/button";
 import { FormField } from "./FormField";
 import { Icon } from "./Icon";
 

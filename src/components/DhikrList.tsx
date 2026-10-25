@@ -1,5 +1,5 @@
 import type { Dhikr } from "@/types/types";
-import { DhikrCard } from "./DhikrCard";
+import { DhikrCard } from "@/components/DhikrCard";
 
 type Props = {
   items: Dhikr[];

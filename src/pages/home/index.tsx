@@ -1,3 +1,4 @@
+import { DhikrCard } from "@/components/DhikrCard";
 import { EmptyStateArt } from "@/components/EmptyStateArt";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -13,7 +14,7 @@ import {
 export function Home() {
   return (
     <div className="flex flex-col h-screen gap-4 p-4">
-      <div className="flex flex-wrap justify-between gap-4 items-end">
+      <div className="flex flex-wrap justify-between gap-4 items-end ">
         <header>
           <h2 className="text-gold-strong font-semibold text-sm">
             DAILY REMEMBERANCE
@@ -40,17 +41,21 @@ export function Home() {
         </EmptyHeader>
         <EmptyContent className="flex-row justify-center gap-2">
           <Button size={"lg"} variant="default" className={"p-6"}>
-             Add dhikr
+            Add dhikr
           </Button>
         </EmptyContent>
       </Empty> */}
       {/* first page - no dhikr yet */}
-      <div>
-        <Card> hi </Card>
-        <Card> hi </Card>
-        <Card> hi </Card>
-        <Card> hi </Card>
+      {/* card added page */}
+      <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] justify-items-center overflow-scroll">
+        <DhikrCard />
+        <DhikrCard />
+        <DhikrCard />
+        <DhikrCard />
+        <DhikrCard />
+        <DhikrCard />
       </div>
+      {/* card added page */}
     </div>
   );
 }

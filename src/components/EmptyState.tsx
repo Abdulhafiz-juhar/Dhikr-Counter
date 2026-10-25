@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { Button } from "./Button";
+import { Button } from "./ui/button";
 import { Icon } from "./Icon";
 
 /** 12 beads on a ring, with a tassel. Decorative only. */
@@ -22,7 +22,12 @@ export function EmptyState({ onAdd }: { onAdd: () => void }) {
   const titleId = useId();
   return (
     <section className="empty-state" aria-labelledby={titleId}>
-      <svg className="empty-state__art" viewBox="0 0 120 130" aria-hidden="true" focusable="false">
+      <svg
+        className="empty-state__art"
+        viewBox="0 0 120 130"
+        aria-hidden="true"
+        focusable="false"
+      >
         {BEADS.map(([cx, cy, tone, r = 6]) => (
           <circle
             key={`${cx}-${cy}`}
@@ -33,13 +38,20 @@ export function EmptyState({ onAdd }: { onAdd: () => void }) {
           />
         ))}
         <path className="empty-state__cord" d="M60 108v12" />
-        <ellipse className="empty-state__bead empty-state__bead--green" cx="60" cy="124" rx="4" ry="5" />
+        <ellipse
+          className="empty-state__bead empty-state__bead--green"
+          cx="60"
+          cy="124"
+          rx="4"
+          ry="5"
+        />
       </svg>
       <h2 className="empty-state__title" id={titleId}>
         Begin your remembrance
       </h2>
       <p className="empty-state__text">
-        You haven't added any dhikr yet. Add one, like SubhanAllah 33 times, then tap to count as you go.
+        You haven't added any dhikr yet. Add one, like SubhanAllah 33 times,
+        then tap to count as you go.
       </p>
       <Button size="large" onClick={onAdd}>
         <Icon name="plus" />

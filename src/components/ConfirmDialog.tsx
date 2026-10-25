@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef } from "react";
-import { Button } from "./Button";
+import { Button } from "./ui/button";
 import { Icon } from "./Icon";
 
 type Props = {
@@ -15,7 +15,13 @@ type Props = {
  * inert page behind it and focus restore for free. Needs plain/dialog-native.css.
  * The first focusable element (Cancel) gets focus, which is the safe default.
  */
-export function ConfirmDialog({ open, name, count, onConfirm, onCancel }: Props) {
+export function ConfirmDialog({
+  open,
+  name,
+  count,
+  onConfirm,
+  onCancel,
+}: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   const uid = useId();
 
@@ -46,7 +52,8 @@ export function ConfirmDialog({ open, name, count, onConfirm, onCancel }: Props)
         Delete “{name}”?
       </h2>
       <p className="dialog__text" id={`${uid}-text`}>
-        This removes the dhikr and its current count of {count}. This can't be undone.
+        This removes the dhikr and its current count of {count}. This can't be
+        undone.
       </p>
       <div className="dialog__actions">
         <Button variant="secondary" onClick={onCancel}>
