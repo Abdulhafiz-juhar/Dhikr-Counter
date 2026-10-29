@@ -108,7 +108,7 @@ export function DhikrCard({
             size="icon"
             onClick={onEdit}
             aria-label={`Edit ${title}`}
-            className="text-muted-foreground hover:text-foreground"
+            className="text-muted-foreground hover:bg-primary/10 hover:text-primary"
           >
             <Pencil className="size-5" aria-hidden="true" />
           </Button>
@@ -160,12 +160,14 @@ export function DhikrCard({
             </div>
           </div>
 
-          {/* Tap button: colors come from the Button's default variant (bg-primary);
-              only the 3D edge is added, as a darker mix of the same token. */}
+          {/* Tap button: colors come from the Button's default variant (bg-primary).
+              Added: a 3D edge (darker mix of the same token) and a hover that mixes primary
+              25% toward the page background, so it visibly softens in BOTH themes
+              (the Button's stock 90% hover is nearly invisible when primary is dark). */}
           <Button
             onClick={handleTap}
             disabled={done}
-            className="h-28 flex-1 flex-col gap-1 rounded-3xl text-lg font-semibold shadow-[0_4px_0_0_color-mix(in_oklab,var(--primary)_70%,black)] transition-all active:translate-y-0.5 active:shadow-[0_2px_0_0_color-mix(in_oklab,var(--primary)_70%,black)] disabled:opacity-70 disabled:shadow-none motion-reduce:transition-none"
+            className="h-28 flex-1 flex-col gap-1 rounded-3xl text-lg font-semibold shadow-[0_4px_0_0_color-mix(in_oklab,var(--primary)_70%,black)] transition-all hover:-translate-y-px hover:bg-[color:color-mix(in_oklab,var(--primary)_75%,var(--background))] active:translate-y-0.5 active:shadow-[0_2px_0_0_color-mix(in_oklab,var(--primary)_70%,black)] disabled:opacity-70 disabled:shadow-none motion-reduce:transition-none"
           >
             <Plus className="size-9" strokeWidth={2.5} aria-hidden="true" />
             {done ? "Completed" : "Tap to count"}
