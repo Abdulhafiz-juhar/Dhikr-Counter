@@ -1,4 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { AddDhikrPopUp } from "@/features/dhikr/components/AddDhikrPopUp";
+import { DeleteDhikrDialog } from "@/features/dhikr/components/DeleteDhikrDialog";
+import { DhikrContent } from "@/features/dhikr/components/DhikrContent";
+import { EditDhikr } from "@/features/dhikr/components/EditDhikrPopUp";
+import { EmptyDhikr } from "@/features/dhikr/components/EmptyDhikr";
 
 export function Home() {
   return (
@@ -15,16 +20,41 @@ export function Home() {
           Add dhikr
         </Button>
       </div>
-      {/* first page - no dhikr yet */}
-      {/* first page - no dhikr yet */}
-      {/* card added page */}
-      {/* card added page */}
-      {/* Add a dhikr popup form */}
-      {/* Add a dhikr popup form */}
-      {/* Edit a dhikr popup form */}
-      {/* Edit a dhikr popup form */}
-      {/* Dhikr Delete confirmation popup */}
-      {/* Dhikr Delete confirmation popup */}
+      <AddDhikrPopUp />
+      <DeleteDhikrDialog />
+      <DhikrContent />
+      <EditDhikr />
     </div>
   );
+}
+
+{
+  /* first page - no dhikr yet */
+}
+{
+  /* first page - no dhikr yet */
+}
+{
+  /* card added page */
+}
+{
+  /* card added page */
+}
+{
+  /* Add a dhikr popup form */
+}
+{
+  /* Add a dhikr popup form */
+}
+{
+  /* Edit a dhikr popup form */
+}
+{
+  /* Edit a dhikr popup form */
+}
+{
+  /* Dhikr Delete confirmation popup */
+}
+{
+  /* Dhikr Delete confirmation popup */
 }
