@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeProvider";
 import { AddDhikrPopUp } from "@/features/dhikr/components/AddDhikrPopUp";
 import { DeleteDhikrDialog } from "@/features/dhikr/components/DeleteDhikrDialog";
 import { DhikrContent } from "@/features/dhikr/components/DhikrContent";
@@ -6,6 +7,8 @@ import { EditDhikr } from "@/features/dhikr/components/EditDhikrPopUp";
 import { EmptyDhikr } from "@/features/dhikr/components/EmptyDhikr";
 
 export function Home() {
+  const { theme, toggle } = useTheme();
+
   return (
     <div className="flex flex-col h-screen gap-4 p-4">
       <div className="flex flex-wrap justify-between gap-4 items-end ">
@@ -20,10 +23,8 @@ export function Home() {
           Add dhikr
         </Button>
       </div>
-      <AddDhikrPopUp />
-      <DeleteDhikrDialog />
+      <Button onClick={() => toggle()}>Theme changer</Button>
       <DhikrContent />
-      <EditDhikr />
     </div>
   );
 }
